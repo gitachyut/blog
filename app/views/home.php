@@ -7,6 +7,7 @@
   </head>
   <body>
     <div class="container">
+      <h1>POSTS</h1>
       <table class="table table-striped">
           <thead>
             <tr>
@@ -22,9 +23,19 @@
             </tr>
           </thead>
           <tbody>
-            <?php foreach ($posts as $key => $value) { ?>
-              echo
-            <? } ?>
+            {% for post in posts %}
+              <tr>
+                  <td>
+                  <a href="{{baseUrl}}/posts/{{post.id}}">{{post.title}}</a>
+                  </td>
+                  <td>
+                    {{post.body[:60]}}
+                  </td>
+                  <td>
+                    {{post.author}}
+                  </td>
+              <tr>
+            {% endfor %}
           </tbody>
       </table>
 

@@ -7,7 +7,7 @@ $app->get('/',function() use ($app) {
     from posts
     left join users
     on posts.user_id = users.id
-  ")->fetchAll(PDO::FETCH_ASSOC);
+  ")->fetchAll(PDO::FETCH_OBJ);
   // var_dump($posts);
   $app->render('home.php',[
     'posts'=>$posts
